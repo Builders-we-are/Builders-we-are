@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team - Our Study Group</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Inline styles for tabs. You can move these to styles.css if desired. */
+    .tabs {
+      width: 90%;
+      margin: 20px auto;
+    }
+    .tab-header {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+      border-bottom: 2px solid #ccc;
+    }
+    .tab-header li {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #eee;
+      margin-right: 2px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .tab-header li.active {
+      background: #fff;
+      border-bottom: 2px solid #fff;
+      font-weight: bold;
+    }
+    .tab-content {
+      border: 2px solid #ccc;
+      border-top: none;
+      padding: 20px;
+      background: #fff;
+    }
+    .tab-content > div {
+      display: none;
+    }
+    .tab-content > div.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="meeting.html">Meeting</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Meet Our Study Group</h1>
+    <p>These are the current members of our study group. Click on a tab to learn something awesome about each member.</p>
+
+    <div class="tabs">
+      <ul class="tab-header">
+        <li class="active" data-tab="tab1">Member 1</li>
+        <li data-tab="tab2">Member 2</li>
+        <li data-tab="tab3">Member 3</li>
+        <li data-tab="tab4">Member 4</li>
+        <li data-tab="tab5">Member 5</li>
+        <li data-tab="tab6">Member 6</li>
+        <li data-tab="tab7">Member 7</li>
+        <li data-tab="tab8">Member 8</li>
+        <li data-tab="tab9">Member 9</li>
+        <li data-tab="tab10">Member 10</li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="tab1" class="active">
+          <h2>Member 1: Alex</h2>
+          <p>Alex is a coding wizard who transforms complex problems into elegant solutions. With a passion for tech and a penchant for innovation, Alex inspires us to push the boundaries of what's possible.</p>
+        </div>
+        <div id="tab2">
+          <h2>Member 2: Bailey</h2>
+          <p>Bailey is our design guru, blending creativity with technical prowess to craft stunning user experiences. Her artistic vision and attention to detail bring our projects to life.</p>
+        </div>
+        <div id="tab3">
+          <h2>Member 3: Casey</h2>
+          <p>Casey is the analytical mind of our group, turning data into actionable insights. His expertise in analytics ensures that every decision is backed by solid evidence.</p>
+        </div>
+        <div id="tab4">
+          <h2>Member 4: Drew</h2>
+          <p>Drew is our tech evangelist, always at the forefront of the latest trends. His enthusiasm for emerging technologies motivates us to stay curious and keep learning.</p>
+        </div>
+        <div id="tab5">
+          <h2>Member 5: Emerson</h2>
+          <p>Emerson is a full-stack developer who bridges the gap between front-end and back-end innovations. Their problem-solving skills and dedication make every project a success.</p>
+        </div>
+        <div id="tab6">
+          <h2>Member 6: Finley</h2>
+          <p>Finley specializes in cybersecurity and ethical hacking. With an unwavering focus on safety, Finley ensures our digital spaces remain secure and resilient.</p>
+        </div>
+        <div id="tab7">
+          <h2>Member 7: Gale</h2>
+          <p>Gale is our project management maestro, coordinating efforts and keeping us on track. Their organizational prowess and calm demeanor are the backbone of our study group.</p>
+        </div>
+        <div id="tab8">
+          <h2>Member 8: Harper</h2>
+          <p>Harper is an expert in emerging technologies, from AI to blockchain. Their forward-thinking mindset helps the group stay ahead of the curve and embrace innovation.</p>
+        </div>
+        <div id="tab9">
+          <h2>Member 9: Jordan</h2>
+          <p>Jordan is our troubleshooting specialist, always ready to tackle technical challenges. Their knack for finding solutions makes them an invaluable asset to our team.</p>
+        </div>
+        <div id="tab10">
+          <h2>Member 10: Kendall</h2>
+          <p>Kendall brings creativity and energy to our projects with innovative ideas and out-of-the-box thinking. Their fresh perspective turns every study session into an inspiring adventure.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Our Study Group. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript to enable tab switching functionality
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabs = document.querySelectorAll('.tab-header li');
+      const contents = document.querySelectorAll('.tab-content > div');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs and contents
+          tabs.forEach(item => item.classList.remove('active'));
+          contents.forEach(content => content.classList.remove('active'));
+
+          // Add active class to the clicked tab and its corresponding content
+          tab.classList.add('active');
+          document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
